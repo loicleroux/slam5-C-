@@ -10,7 +10,6 @@ namespace SNCF
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Test execution");
             Console.ReadLine();
         }
