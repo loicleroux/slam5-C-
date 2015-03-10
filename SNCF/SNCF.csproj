@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Controleur\Class1.cs" />
     <Compile Include="Dao\Bdd.cs" />
+    <Compile Include="Dao\DaoUtilisateur.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
