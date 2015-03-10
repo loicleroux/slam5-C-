@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SNCF.Metier
+namespace SNCF.Vue
 {
-    class Class1
+    interface Interface1
     {
     }
 }
