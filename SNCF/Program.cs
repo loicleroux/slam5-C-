@@ -1,4 +1,5 @@
 ﻿using SNCF.Metier;
+using SNCF.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,11 @@ namespace SNCF
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Test execution");
+            Utilisateur unUser = new Utilisateur(1,"","","test@mail.fr","root","");
+            Bdd bdd = new Bdd();
+
+            //bdd.addUser(unUser);
+
             Console.ReadLine();
         }
     }
