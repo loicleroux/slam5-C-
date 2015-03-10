@@ -13,6 +13,7 @@ namespace SNCF
         static void Main(string[] args)
         {
             Console.WriteLine("Test execution");
+            Console.WriteLine("Test execution");
 
             Utilisateur unUser = new Utilisateur(1,"","","test@mail.fr","root","");
             Bdd bdd = new Bdd();
