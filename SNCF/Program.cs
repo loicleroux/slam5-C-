@@ -1,4 +1,5 @@
 ﻿using SNCF.Metier;
+using SNCF.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace SNCF
             Utilisateur unUser = new Utilisateur(1,"","","test@mail.fr","root","");
             Bdd bdd = new Bdd();
 
-            bdd.addUser(unUser);
+            //bdd.addUser(unUser);
 
             Console.ReadLine();
         }
