@@ -25,9 +25,5 @@ namespace SNCF.Metier
             this.mdp = mdp;
         }
 
-        public Utilisateur()
-        {
-
-        }
     }
 }
