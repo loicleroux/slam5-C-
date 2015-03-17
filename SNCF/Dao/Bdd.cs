@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using SNCF.Metier;
 
 namespace SNCF.Dao
 {
@@ -21,7 +22,7 @@ namespace SNCF.Dao
         private void InitConnexion()
         {
             // Création de la chaîne de connexion
-            string connectionString = "SERVER=127.0.0.1; DATABASE=sncf; UID=root; PASSWORD=";
+            string connectionString = "SERVER=127.0.0.1; DATABASE=sncf; UID=sncf; PASSWORD=sncf";
             this.connection = new MySqlConnection(connectionString);
         }
 
@@ -56,13 +57,18 @@ namespace SNCF.Dao
                 // Possibilité de créer un Logger pour les exceptions SQL reçus
                 // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
             }
-        }
+        }*/
 
 
         //methode pour ajouter un utilisateur
         public void addUser(Utilisateur unUser)
         {
-            //DaoUtilisateur
-        }*/
+            MySqlCommand cmd = this.connection.CreateCommand();
+            DaoUtilisateur dao = new DaoUtilisateur();
+            this.connection.Open();
+            dao.insert(unUser, cmd);
+            //DaoUtilisateur.insert(unUser);
+            this.connection.Close();
+        }
     }
 }
