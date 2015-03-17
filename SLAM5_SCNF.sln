@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLAM5_SCNF", "SLAM5_SCNF.csproj", "{B90F4334-18CC-42D9-8737-3BBC3801DEEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B90F4334-18CC-42D9-8737-3BBC3801DEEB}.Debug|x86.ActiveCfg = Debug|x86
+		{B90F4334-18CC-42D9-8737-3BBC3801DEEB}.Debug|x86.Build.0 = Debug|x86
+		{B90F4334-18CC-42D9-8737-3BBC3801DEEB}.Release|x86.ActiveCfg = Release|x86
+		{B90F4334-18CC-42D9-8737-3BBC3801DEEB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

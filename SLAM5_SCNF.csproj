@@ -61,21 +61,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".git\ms-persist.xml" />
+    <Content Include="SNCF\readme.txt" />
     <Content Include="SNCF\SNCF.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SNCF\Controleur\Class1.cs" />
     <Compile Include="SNCF\Dao\Class1.cs" />
     <Compile Include="SNCF\Metier\Class1.cs" />
+    <Compile Include="SNCF\Metier\utilisateur.cs" />
     <Compile Include="SNCF\Program.cs" />
     <Compile Include="SNCF\Properties\AssemblyInfo.cs" />
     <Compile Include="SNCF\TestDao\Class1.cs" />
     <Compile Include="SNCF\TestMetier\Class1.cs" />
+    <Compile Include="SNCF\Vue\CodeFile1.cs" />
+    <Compile Include="SNCF\Vue\Interface1.cs" />
+    <Compile Include="SNCF\Vue\UserControl1.cs" />
+    <Compile Include="SNCF\Vue\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
     <Folder Include=".git\refs\tags\" />
-    <Folder Include="SNCF\Vue\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SNCF\Vue\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
