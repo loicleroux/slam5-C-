@@ -20,5 +20,10 @@ namespace SLAM5_SCNF.SNCF.Vue
         {
 
         }
+
+        private void Vue_connexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
