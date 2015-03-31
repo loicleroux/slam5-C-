@@ -95,26 +95,26 @@ namespace SNCF.Dao
             test &= verifMail(unUser.mdp);
 
             if (test)
+        {
+            try
             {
-                try
-                {
                     openBdd();
-                    cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES ('" + unUser.nom + "', '" + unUser.prenom + "', '" + unUser.login + "' , '" + unUser.mdp + "' , '" + unUser.mail + "' )";
+                cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES ('" + unUser.nom + "', '" + unUser.prenom + "', '" + unUser.login + "' , '" + unUser.mdp + "' , '" + unUser.mail + "' )";
 
-                    Console.WriteLine("command text " + cmd.CommandText);
-
-                    cmd.ExecuteNonQuery();
+                Console.WriteLine("command text " + cmd.CommandText);
+                
+                cmd.ExecuteNonQuery();
 
                     closeBdd(bdd);
-                    Console.WriteLine("fin query");
-                    Console.ReadLine();
-                }
-                catch (System.Exception ex)
-                {
-                    Console.WriteLine("Test error");
-                    Console.WriteLine("error : " + ex);
-                    Console.ReadLine();
-                }
+                Console.WriteLine("fin query");
+                Console.ReadLine();
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("Test error");
+                Console.WriteLine("error : " + ex);
+                Console.ReadLine();
+            }
             }
         }
     }
