@@ -299,7 +299,7 @@
             // 
             this.btn_imprimer_convocation.Location = new System.Drawing.Point(523, 106);
             this.btn_imprimer_convocation.Name = "btn_imprimer_convocation";
-            this.btn_imprimer_convocation.Size = new System.Drawing.Size(96, 43);
+            this.btn_imprimer_convocation.Size = new System.Drawing.Size(96, 46);
             this.btn_imprimer_convocation.TabIndex = 7;
             this.btn_imprimer_convocation.Text = "Imprimer une covocation";
             this.btn_imprimer_convocation.UseVisualStyleBackColor = true;
@@ -308,7 +308,7 @@
             // 
             this.btn_imprimer_toutes_convocations.Location = new System.Drawing.Point(523, 164);
             this.btn_imprimer_toutes_convocations.Name = "btn_imprimer_toutes_convocations";
-            this.btn_imprimer_toutes_convocations.Size = new System.Drawing.Size(96, 55);
+            this.btn_imprimer_toutes_convocations.Size = new System.Drawing.Size(96, 46);
             this.btn_imprimer_toutes_convocations.TabIndex = 8;
             this.btn_imprimer_toutes_convocations.Text = "Imprimer toutes les convocations";
             this.btn_imprimer_toutes_convocations.UseVisualStyleBackColor = true;
