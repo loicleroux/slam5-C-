@@ -11,31 +11,101 @@ namespace SNCF.Dao
 {
     class DaoUtilisateur
     {
+        MySqlCommand cmd;
+        Bdd bdd;
+
         public DaoUtilisateur()
         {
 
         }
 
-        public void insert(Utilisateur unUser, MySqlCommand cmd)
+        private void openBdd()
+        {
+            bdd = new Bdd();
+            cmd = bdd.connection.CreateCommand();
+            bdd.connection.Open();
+        }
+
+        private void closeBdd(Bdd bdd)
+        {
+            bdd.connection.Close();
+        }
+
+        public Boolean verifLog(String log)
+        {
+            openBdd();
+
+            Boolean test = true;
+
+            cmd.CommandText = "SELECT id FROM utilisateur WHERE login='" + log + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            try
+            {
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != "")
+                    {
+                        test = false;
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("select error");
+                Console.WriteLine("error : " + ex);
+                Console.ReadLine();
+            }
+
+            closeBdd(bdd);
+            return test;
+        }
+
+        public Boolean verifMail(String mail)
+        {
+            bool test = true;
+            openBdd();
+            cmd.CommandText = "SELECT id FROM utilisateur WHERE mail='" + mail + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            try
+            {
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != "")
+                    {
+                        test = false;
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("select error");
+                Console.WriteLine("error : " + ex);
+                Console.ReadLine();
+            }
+
+            closeBdd(bdd);
+            return test;
+        }
+
+        public void insert(Utilisateur unUser)
+        {
+            bool test = verifLog(unUser.login);
+            test &= verifMail(unUser.mdp);
+
+            if (test)
         {
             try
             {
+                    openBdd();
                 cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES ('" + unUser.nom + "', '" + unUser.prenom + "', '" + unUser.login + "' , '" + unUser.mdp + "' , '" + unUser.mail + "' )";
-                //cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES (@nom , @prenom , @login , @mdp , @mail)";
-                // utilisation de l'objet contact passé en paramètre
-                cmd.Parameters.AddWithValue("@nom", unUser.nom);
-                cmd.Parameters.AddWithValue("@prenom", unUser.prenom);
-                cmd.Parameters.AddWithValue("@login", unUser.login);
-                cmd.Parameters.AddWithValue("@mdp", unUser.mdp);
-                cmd.Parameters.AddWithValue("@mail", unUser.mail);
-
-                //Console.WriteLine("recuperation " + unUser.nom);
 
                 Console.WriteLine("command text " + cmd.CommandText);
                 
-
                 cmd.ExecuteNonQuery();
 
+                    closeBdd(bdd);
                 Console.WriteLine("fin query");
                 Console.ReadLine();
             }
@@ -44,6 +114,7 @@ namespace SNCF.Dao
                 Console.WriteLine("Test error");
                 Console.WriteLine("error : " + ex);
                 Console.ReadLine();
+            }
             }
         }
     }

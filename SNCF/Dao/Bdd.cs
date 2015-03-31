@@ -10,7 +10,7 @@ namespace SNCF.Dao
 {
     public class Bdd
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
 
         // Constructeur
         public Bdd()
@@ -63,12 +63,8 @@ namespace SNCF.Dao
         //methode pour ajouter un utilisateur
         public void addUser(Utilisateur unUser)
         {
-            MySqlCommand cmd = this.connection.CreateCommand();
             DaoUtilisateur dao = new DaoUtilisateur();
-            this.connection.Open();
-            dao.insert(unUser, cmd);
-            //DaoUtilisateur.insert(unUser);
-            this.connection.Close();
+            dao.insert(unUser);
         }
     }
 }
