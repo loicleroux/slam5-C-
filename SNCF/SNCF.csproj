@@ -89,12 +89,24 @@
     <Compile Include="TestDao\Class1.cs" />
     <Compile Include="TestMetier\Class1.cs" />
     <Compile Include="Vue\CodeFile1.cs" />
+    <Compile Include="Vue\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vue\Interface1.cs" />
     <Compile Include="Vue\UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Vue\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vue\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
