@@ -45,10 +45,6 @@ namespace SNCF.Dao
                 Console.WriteLine("error : " + ex);
                 Console.ReadLine();
             }
-
-
-
-
         }
     }
 }
