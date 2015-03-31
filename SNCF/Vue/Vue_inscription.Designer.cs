@@ -110,7 +110,7 @@
             this.groupBox3.Size = new System.Drawing.Size(654, 241);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Selection des participants à la session";
+            this.groupBox3.Text = "Sélection des participants à la session";
             // 
             // txt_num_session
             // 
