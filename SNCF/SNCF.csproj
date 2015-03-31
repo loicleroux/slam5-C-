@@ -59,6 +59,10 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\Downloads\mysql-connector.net\MySql.Data.dll</HintPath>
