@@ -19,7 +19,7 @@ namespace SNCF
 
             bdd.addUser(unUser);
 
-            Console.WriteLine('ça marche !');
+            Console.WriteLine(" c'est bon !");
             Console.ReadLine();
         }
     }
