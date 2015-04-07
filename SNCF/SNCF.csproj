@@ -86,12 +86,13 @@
   <ItemGroup>
     <Compile Include="Controleur\Class1.cs" />
     <Compile Include="Dao\Bdd.cs" />
-    <Compile Include="Metier\DaoUtilisateur.cs" />
+    <Compile Include="Dao\DaoUtilisateur.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDao\Class1.cs" />
     <Compile Include="TestMetier\Class1.cs" />
+    <Compile Include="TestMetier\TestUtilisateur.cs" />
     <Compile Include="Vue\Vue_connexion.cs">
       <SubType>Form</SubType>
     </Compile>
