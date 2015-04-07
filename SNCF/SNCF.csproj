@@ -86,7 +86,7 @@
   <ItemGroup>
     <Compile Include="Controleur\Class1.cs" />
     <Compile Include="Dao\Bdd.cs" />
-    <Compile Include="Dao\DaoUtilisateur.cs" />
+    <Compile Include="Metier\DaoUtilisateur.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,9 +112,23 @@
     <Compile Include="Vue\UserControl2.Designer.cs">
       <DependentUpon>UserControl2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vue\Vue_connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Vue_connexion.Designer.cs">
+      <DependentUpon>Vue_connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\Vue_inscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\Vue_inscription.Designer.cs">
+      <DependentUpon>Vue_inscription.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\SNCF.exe.config" />
+    <None Include="bin\Debug\SNCF.vshost.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -137,8 +151,15 @@
     <EmbeddedResource Include="Vue\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Vue_connexion.resx">
+      <DependentUpon>Vue_connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue\Vue_inscription.resx">
+      <DependentUpon>Vue_inscription.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\SNCF.vshost.exe" />
     <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -95,27 +95,58 @@ namespace SNCF.Dao
             test &= verifMail(unUser.mdp);
 
             if (test)
-        {
-            try
             {
+                try
+                {
                     openBdd();
-                cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES ('" + unUser.nom + "', '" + unUser.prenom + "', '" + unUser.login + "' , '" + unUser.mdp + "' , '" + unUser.mail + "' )";
+                    cmd.CommandText = "INSERT INTO utilisateur (nom,prenom,login,mdp,mail) VALUES ('" + unUser.nom + "', '" + unUser.prenom + "', '" + unUser.login + "' , '" + unUser.mdp + "' , '" + unUser.mail + "' )";
 
-                Console.WriteLine("command text " + cmd.CommandText);
-                
-                cmd.ExecuteNonQuery();
+                    Console.WriteLine("command text " + cmd.CommandText);
+
+                    cmd.ExecuteNonQuery();
 
                     closeBdd(bdd);
-                Console.WriteLine("fin query");
-                Console.ReadLine();
+                    Console.WriteLine("fin query");
+                    Console.ReadLine();
+                }
+                catch (System.Exception ex)
+                {
+                    Console.WriteLine("Test error");
+                    Console.WriteLine("error : " + ex);
+                    Console.ReadLine();
+                }
+            }
+        }
+
+        public Boolean connection(String log, String mdp)
+        {
+            bool test = false;
+
+            openBdd();
+            cmd.CommandText = "SELECT id FROM utilisateur WHERE log='" + log + "', mdp='" + mdp + "';";
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            try
+            {
+                while (reader.Read())
+                {
+                    if (reader.GetString(0) != "")
+                    {
+                        test = true;
+                    }
+                }
             }
             catch (System.Exception ex)
             {
-                Console.WriteLine("Test error");
+                Console.WriteLine("select error");
                 Console.WriteLine("error : " + ex);
                 Console.ReadLine();
             }
-            }
+
+            closeBdd(bdd);
+            return test;
         }
+
     }
 }
