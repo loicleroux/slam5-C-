@@ -23,6 +23,7 @@ namespace SNCF.Dao
         {
             // Création de la chaîne de connexion
             string connectionString = "SERVER=127.0.0.1; DATABASE=sncf; UID=sncf; PASSWORD=sncf";
+
             this.connection = new MySqlConnection(connectionString);
         }
 
