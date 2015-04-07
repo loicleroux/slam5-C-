@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SNCF\Controleur\Class1.cs" />
+    <Compile Include="SNCF\Controleur\Ctrl_inscription.cs" />
     <Compile Include="SNCF\Dao\Bdd.cs" />
     <Compile Include="SNCF\Dao\DaoUtilisateur.cs" />
     <Compile Include="SNCF\Metier\utilisateur.cs" />
